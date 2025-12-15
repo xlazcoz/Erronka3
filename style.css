@@ -113,7 +113,7 @@ details[open] summary:hover {
 summary:hover {
     background-color: #e0e0e0; 
 }
-img:hover {
+.logo img:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
@@ -122,6 +122,104 @@ img:hover {
     width: 40px;
     color: #000000; 
 }
+
+
+
+
+.seccion-carrusel {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.carrusel-imagenes {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+}
+
+.imagen {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen h1 {
+    color: white;
+    font-size: 40px;
+    text-transform: uppercase;
+    background-color: rgba(0,0,0,0.4);
+    padding: 15px 30px;
+}
+
+
+
+.seccion-novedades {
+    max-width: 1200px;
+    margin: 0 auto;    
+    padding-bottom: 60px;
+}
+
+.seccion-novedades h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.lista-productos {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px;       
+    justify-content: center;
+}
+
+.producto {
+    width: 30%; 
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 255, 255); 
+    padding: 15px;    
+}
+
+.imagen-ropa {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    background-color: #eeeeee;
+}
+
+.datos-producto h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.precio {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.boton-detalles {
+    border: none;
+    padding: 12px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+
+
+
 
 .footer2 {
     background-color: #343331;
