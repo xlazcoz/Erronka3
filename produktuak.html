@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Xabier, Juan eta Anartz" />
     <meta name="description" content="Hemen Indiusurbil-eko web orria egingo dugu" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="produktuak.css" />
     <title>Indiusurbil</title>
 </head>
 
@@ -33,30 +33,27 @@
         </nav>
     </header>
     <main>
-        <section class="seccion-carrusel">
-            <div class="carrusel-imagenes">
-                <div class="imagen" style="
-                background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=400&fit=crop');">
-                    <h1>COLECCIÓN PRINCIPAL</h1>
-                </div>
-                <div class="imagen" style="
-                background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&h=400&fit=crop');">
-                    <h1>NUEVA TEMPORADA</h1>
-                </div>
-                <div class="imagen" style="
-                background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&h=400&fit=crop');">
-                    <h1>OFERTAS ESPECIALES</h1>
-                </div>
+        
+            <div class="imagen-horizontal">
+                <img src="img/nueva coleccion.png" alt="imagen nueva coleccion">
             </div>
-        </section>
+        
+        <br>
+        <h1>Produktuen Iragazkia</h1>
+    <div class="botones">
+      <button id="produktuak" class="boton">Todos los productos</button>
+      <button id="camisetas" class="boton">camisetas</button>
+      <button id="pantalones" class="boton">Pantalones</button>
+      <button id="chaquetas" class="boton">Chaquetas</button>
+      <button id="zapatillas" class="boton">Zapatillas</button>
+    </div>
 
-         <div class="produktuen-eremua">
+    <div class="produktuen-eremua">
       
       <div id="produktuenZerrenda"></div>
 
     </div>
 
-    
     
     </main>
 
@@ -83,35 +80,7 @@
             </ul>
         </div>
     </footer>
-    <script>
-        
-        document.addEventListener("DOMContentLoaded", () => {
-            const carrusel = document.querySelector(".carrusel-imagenes");
-            const imagens = document.querySelectorAll(".imagen");
-            const btnSiguiente = document.querySelector(".derecha");
-            const btnAnterior = document.querySelector(".izquierda");
-
-            let contador = 0;
-            const totalimagens = imagens.length;
-
-            function moverCarrusel(nuevoIndice) {
-                if (nuevoIndice < 0) {
-                    contador = totalimagens - 1;
-                } else if (nuevoIndice >= totalimagens) {
-                    contador = 0;
-                } else {
-                    contador = nuevoIndice;
-                }
-
-                
-                carrusel.style.transform = `translateX(-${contador * 100}%)`;
-            }
-
-            
-            setInterval(() => moverCarrusel(contador + 1), 5000);
-        });
-    </script>
-    <script src="javascript2.js"></script>
+    <script src="javascript.js"></script>
 </body>
 
 </html>
