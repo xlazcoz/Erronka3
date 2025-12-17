@@ -1,0 +1,361 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; 
+    line-height: 1.6;
+    color: #000000; 
+}
+
+header {
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 15px 30px;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 2000px;
+    margin: auto;  
+}
+
+details {
+    position: static;
+    margin-left: auto; 
+    margin-right: 50px;
+}
+
+summary {
+    background-color: #f5f5f5; 
+    list-style: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #000000; 
+    border: 1px solid #e0e0e0; 
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: '\2630';
+    font-size: 30px;
+}
+
+details[open] summary::before {
+    content: '\2715';
+}
+
+details[open] summary {
+    background-color: #f5f5f5;
+}
+
+details[open] summary:hover, summary:hover {
+    background-color: #e0e0e0; 
+}
+
+.menua {
+    background-color: #ffffff;
+    padding: 15px 0px;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+    margin-top: -25px;
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 100;
+}
+
+.menua li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.menua li a {
+    text-decoration: none;
+    color: #000000; 
+    border-radius: 4px;
+    padding: 8px 16px;
+    display: block;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.menua li a:hover {
+    color: #000000; 
+    background-color: #dadada; 
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.carrito img {
+    width: 40px;
+    color: #000000; 
+}
+
+.portada {
+    padding: 50px;
+    text-align: center;
+    border-bottom: 1px solid;
+    height: 500px;
+    background-image: url('img/promozioak.png');
+    background-position: center;
+    background-size: cover;   
+    background-repeat: no-repeat;
+}
+
+
+.seccion-flash {
+    display: flex; 
+    background-color: #222; 
+    color: white;
+    max-width: 1000px;
+    margin: 50px auto; 
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    transition: 0.5s;
+}
+.seccion-flash:hover{
+    transform: scale(1.1);
+}
+
+.flash-texto {
+    padding: 40px;
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.flash-imagen {
+    flex: 1; 
+    background-color: white; 
+    position: relative; 
+    display: flex;         
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+
+.flash-imagen img {
+    width: 100%;       
+    height: 100%;      
+    object-fit: cover;
+    border-radius: 20px;
+    
+}
+
+.flash-texto h2 {
+    color: #ffb703;
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+}
+
+.contador {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    font-family: monospace;
+}
+
+.tiempo {
+    background: #444;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #666;
+}
+
+.tiempo small {
+    display: block;
+    font-size: 0.8rem;
+    color: #aaa;
+    font-weight: normal;
+}
+
+.dos-puntos {
+    font-size: 2rem;
+    color: #ffb703;
+}
+
+
+.precio-grande b {
+    color: #ffb703;
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+
+.boton-flash {
+    background-color: #ffb703;
+    color: black;
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+.titulo-separador {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.escaparate {
+    display: flex;
+    gap: 100px;
+    max-width: 1200px;
+    align-items: center;
+    padding: 0 20px;
+    margin-left: 11%;
+}
+
+.tarjeta {
+    background: white;
+    border-radius: 15px;
+    overflow:auto;
+    min-width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    position: relative;
+    border: 1px black solid;
+    
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+.etiqueta {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #d90429;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.foto {
+    height: 220px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ffffff;
+}
+
+.foto img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.info {
+    padding: 20px;
+    text-align: center;
+}
+
+.precios b {
+    color: #d90429;
+    font-size: 1.4rem;
+    margin-left: 10px;
+}
+
+.boton-comprar {
+    background-color: #cfcfcf;
+    color: cfcfcf;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.boton-comprar:hover {
+    background-color: #424242;
+    color: white;
+}
+
+
+
+
+
+.footer2 {
+    background-color: #343331;
+    padding: 40px 30px;
+    border-top: 1px solid #333333; 
+    color: #cccccc; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.logo img {
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.logos ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.logos img {
+    height: 20px;
+}
+
+.logos a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #222222;
+    border-radius: 10px;
+}
+
+.logos img:hover {
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
+}
+
+summary, .logos a {
+    border: 1px solid #e0e0e0;
+}
