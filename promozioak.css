@@ -168,7 +168,7 @@ details[open] summary:hover, summary:hover {
 }
 
 .flash-texto h2 {
-    color: #ffb703;
+    color: #ffb700;
     font-size: 2rem;
     margin: 0 0 10px 0;
 }
@@ -200,19 +200,19 @@ details[open] summary:hover, summary:hover {
 
 .dos-puntos {
     font-size: 2rem;
-    color: #ffb703;
+    color: #ffb700;
 }
 
 
 .precio-grande b {
-    color: #ffb703;
+    color: #ffb700;
     font-size: 2rem;
     margin-left: 10px;
 }
 
 
 .boton-flash {
-    background-color: #ffb703;
+    background-color: #ffb700;
     color: black;
     border: none;
     padding: 15px;
@@ -261,7 +261,7 @@ details[open] summary:hover, summary:hover {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: #d90429;
+    background: rgb(212, 0, 0);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
@@ -289,7 +289,7 @@ details[open] summary:hover, summary:hover {
 }
 
 .precios b {
-    color: #d90429;
+    color: rgb(212, 0, 0);
     font-size: 1.4rem;
     margin-left: 10px;
 }
