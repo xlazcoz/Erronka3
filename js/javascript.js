@@ -260,7 +260,7 @@ function erakutsiProduktuak(erakustekoProduktuak) {
     div.innerHTML = `
       <img src="${produktua.img}" alt="${produktua.productName}">
       <h3>${produktua.productName}</h3>
-      <p class="prezioa">$ ${produktua.price}</p>
+      <p class="prezioa"> ${produktua.price}€ </p>
       <button>Gehitu saskira</button>
     `
     
