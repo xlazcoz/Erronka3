@@ -24,7 +24,7 @@
                     <li><a href="index.html">Orrialde nagusia</a></li>
                     <li><a href="produktuak.html">Produktuak</a></li>
                     <li><a href="promozioak.html">Promozioak</a></li>
-                    <li><a href="#">Guri buruz</a></li>
+                    <li><a href="guriburuz.html">Guri buruz</a></li>
                 </ul>
             </details>
             <div class="carrito">
@@ -36,28 +36,26 @@
         <section class="seccion-carrusel">
             <div class="carrusel-imagenes">
                 <div class="imagen" style="
-                background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=400&fit=crop');">
+              background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=400&fit=crop');
+            ">
                     <h1>COLECCIÓN PRINCIPAL</h1>
                 </div>
                 <div class="imagen" style="
-                background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&h=400&fit=crop');">
+              background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&h=400&fit=crop');
+            ">
                     <h1>NUEVA TEMPORADA</h1>
                 </div>
                 <div class="imagen" style="
-                background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&h=400&fit=crop');">
+              background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&h=400&fit=crop');
+            ">
                     <h1>OFERTAS ESPECIALES</h1>
                 </div>
             </div>
         </section>
 
-         <div class="produktuen-eremua">
-      
-      <div id="produktuenZerrenda"></div>
-
-    </div>
-
-    
-    
+        <div class="produktuen-eremua">
+            <div id="produktuenZerrenda"></div>
+        </div>
     </main>
 
     <footer class="footer2">
@@ -84,7 +82,6 @@
         </div>
     </footer>
     <script>
-        
         document.addEventListener("DOMContentLoaded", () => {
             const carrusel = document.querySelector(".carrusel-imagenes");
             const imagens = document.querySelectorAll(".imagen");
@@ -103,11 +100,9 @@
                     contador = nuevoIndice;
                 }
 
-                
                 carrusel.style.transform = `translateX(-${contador * 100}%)`;
             }
 
-            
             setInterval(() => moverCarrusel(contador + 1), 5000);
         });
     </script>
