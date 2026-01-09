@@ -291,6 +291,11 @@ summary:hover {
     margin-bottom: 10px;
 }
 
+.oharlegalak a {
+    color: white;
+    justify-content: center;
+    display: block;
+}
 
 .logos ul {
     display: flex;
