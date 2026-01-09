@@ -243,7 +243,7 @@ details[open] summary:hover, summary:hover {
     background: white;
     border-radius: 15px;
     overflow:auto;
-    min-width: 300px;
+    min-width: 250px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s;
     position: relative;
