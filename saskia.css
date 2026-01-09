@@ -1,3 +1,4 @@
+/* -----------------HEADER--------------- */
 * {
     margin: 0;
     padding: 0;
@@ -123,6 +124,16 @@ img:hover {
     color: #000000; 
 }
 
+
+
+
+
+
+
+
+
+
+/*---------------- FOOTER-------------------- */
 .footer2 {
     background-color: #343333;
     padding: 40px 30px;
