@@ -1,19 +1,19 @@
 const produktuak = [
   // --- CAMISETAS ---
   {
-    productName: "Camiseta blanca",
+    productName: "Kamiseta Txuria",
     price: 15,
     img: "img/camiseta blanca.png",
     category: 'camisetas'
   },
   {
-    productName: "Camiseta negra",
+    productName: "Kamiseta Beltza",
     price: 18,
     img: "img/camiseta negra.png",
     category: 'camisetas'
   },
   {
-    productName: "Camiseta gris",
+    productName: "Kamiseta Grisa",
     price: 20,
     img: "img/camiseta gris.png",
     category: 'camisetas'
@@ -22,19 +22,19 @@ const produktuak = [
 
   // --- PANTALONES ---
   {
-    productName: "Pantalón vaquero",
+    productName: "Bakero Galtza",
     price: 40,
     img: "img/pantalon vaquero.png",
     category: 'pantalones'
   },
   {
-    productName: "Pantalón beige",
+    productName: "Galtzak Beige",
     price: 45,
     img: "img/pantalon beige.png",
     category: 'pantalones'
   },
   {
-    productName: "Pantalón chino negro",
+    productName: "Txino Galtzak Beltza",
     price: 35,
     img: "img/pantalon chino negro.png",
     category: 'pantalones'
@@ -42,19 +42,19 @@ const produktuak = [
   
   // --- CHAQUETAS ---
   {
-    productName: "Chaqueta vaquera",
+    productName: "Bakero Txaketa",
     price: 60,
     img: "img/chaqueta vaquera.png",
     category: 'chaquetas'
   },
   {
-    productName: "Chaqueta Bomber Negra",
+    productName: "Bomber Txaketa Beltza",
     price: 80,
     img: "img/Chaqueta Bomber Negra.png",
     category: 'chaquetas'
   },
   {
-    productName: "Gabardina Beige con Cinturón",
+    productName: "Gabardina Beige Gerrikoarekin",
     price: 75,
     img: "img/Gabardina Beige con Cinturón.png",
     category: 'chaquetas'
@@ -63,7 +63,7 @@ const produktuak = [
 
   // --- ZAPATILLAS ---
   {
-    productName: "Zapatillas deportivas blancas",
+    productName: "Kiroletako Zapatila Txuriak",
     price: 50,
     img: "img/Zapatillas deportivas blancas.png",
     category: 'zapatillas'
