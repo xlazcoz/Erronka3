@@ -275,3 +275,8 @@ h1 {
 summary, .logos a {
     border: 1px solid #e0e0e0;
 }
+.oharlegalak a {
+    color: white;
+    justify-content: center;
+    display: block;
+}
