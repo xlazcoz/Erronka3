@@ -273,6 +273,7 @@ details[open] summary:hover, summary:hover {
     padding: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #fff;
     border-bottom: 1px solid #ffffff;
 }
