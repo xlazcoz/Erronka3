@@ -24,7 +24,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     max-width: 2000px;
-    margin: auto;  
+    margin: auto; 
+   
 }
 
 header {
@@ -124,9 +125,7 @@ img:hover {
     color: #000000; 
 }
 .carrito span{
-    font-size: 30px;
-    background-color: red;
-    border-radius: 50%;
+    font-size: 20px;
 }
 
 
@@ -145,7 +144,7 @@ border-radius: 4%;
 
 
 .footer2 {
-    background-color: #343333;
+    background-color: #343331;
     padding: 40px 30px;
     border-top: 1px solid #333333; 
     color: #cccccc; 
@@ -161,6 +160,11 @@ border-radius: 4%;
     margin-bottom: 10px;
 }
 
+.oharlegalak a {
+    color: white;
+    justify-content: center;
+    display: block;
+}
 
 .logos ul {
     display: flex;
