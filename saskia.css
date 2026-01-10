@@ -123,13 +123,10 @@ img:hover {
     width: 40px;
     color: #000000; 
 }
-
-
-body h1 {
-    text-align: center;
-    margin: 20px 0;
-    font-size: 36px;
-    color: #333333; 
+.carrito span{
+    font-size: 30px;
+    background-color: red;
+    border-radius: 50%;
 }
 
 
@@ -137,10 +134,16 @@ body h1 {
 
 
 
+.saskia_produktuak img{
+width: 10px;
+border-radius: 4%;
+}
 
 
 
-/*---------------- FOOTER-------------------- */
+
+
+
 .footer2 {
     background-color: #343333;
     padding: 40px 30px;
