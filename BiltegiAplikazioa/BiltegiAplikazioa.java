@@ -130,7 +130,7 @@ class UI {
     int errenkada;
     int zutabea;
     
-    // Validar fila
+    // Errenkada Ondo dagoela ziurtatu
     while(true){
         errenkada = irakurriZenbakia("Errenkada: ");
         if(errenkada >= 0 && errenkada < 6){
@@ -139,7 +139,7 @@ class UI {
         System.out.println("Errenkada ez da baliozkoa. 0 eta 5 artean egon behar da.");
     }
     
-    // Validar columna
+    // Zutabea Ondo dagoela ziurtatu
     while(true){
         zutabea = irakurriZenbakia("Zutabea: ");
         if(zutabea >= 0 && zutabea < 6){
@@ -363,7 +363,7 @@ class InbentarioZerbitzua {
                 String taila = p.getAtributuak().getOrDefault("taila", "N/A");
                 String kolorea = p.getAtributuak().getOrDefault("kolorea", "N/A");
                 
-               
+            
                 System.out.println("-> " + p.getIzena() + " - " + taila + " - " + kolorea + " (EAN: " + p.getEan13() + ")");
             }
         }
