@@ -104,7 +104,14 @@ class UI {
     private Produktua produktuaIrakurri() {
         String ean = irakurriTestua("EAN-13 kodea: ");
         String izena = irakurriTestua("Produktuaren izena: ");
-        String taila = irakurriTestua("Taila: ");
+        String taila;
+    while (true) {
+        taila = irakurriTestua("Taila: ");
+        if (taila.matches("^(XS|S|M|L|XL)$")) {
+            break;
+        }
+        System.out.println("Talla no válida. Debe ser XS, S, M, L o XL. Inténtalo de nuevo.");
+    }
         String kolorea = irakurriTestua("Kolorea: ");
 
         Map<String, String> atributuak = new HashMap<>();
