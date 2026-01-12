@@ -177,6 +177,7 @@ img:hover {
 .produktu img:not(.papelera) {
     width: 150px;
     border-radius: 16px;
+    height: 300;
 }
 
 .izena h4 {
@@ -240,7 +241,7 @@ img:hover {
     justify-content: center;
 }
 
-.kantidadea b {
+.kantitatea b {
     display: flex;
     justify-content: center;
 }
