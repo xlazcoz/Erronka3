@@ -142,12 +142,6 @@ img:hover {
     margin-bottom: 40px;
     font-size: 20px;
 }
-
-.saskia_produktuak img:not(.papelera) {
-    width: 150px;
-    border-radius: 16px;
-}
-
 .papelera img {
     width: 30px;
     border: none;
