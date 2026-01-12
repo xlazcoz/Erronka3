@@ -127,11 +127,29 @@ class UI {
 
 
     private Gelaxka gelaxkaIrakurri() {
-        int errenkada = irakurriZenbakia("Errenkada: ");
-        int zutabea = irakurriZenbakia("Zutabea: ");
-
-        return apalategia.getGelaxka(errenkada, zutabea);
+    int errenkada;
+    int zutabea;
+    
+    // Validar fila
+    while(true){
+        errenkada = irakurriZenbakia("Errenkada: ");
+        if(errenkada >= 0 && errenkada < 6){
+            break;
+        }
+        System.out.println("Errenkada ez da baliozkoa. 0 eta 5 artean egon behar da.");
     }
+    
+    // Validar columna
+    while(true){
+        zutabea = irakurriZenbakia("Zutabea: ");
+        if(zutabea >= 0 && zutabea < 6){
+            break;
+        }
+        System.out.println("Zutabea ez da baliozkoa. 0 eta 5 artean egon behar da.");
+    }
+
+    return apalategia.getGelaxka(errenkada, zutabea);
+}
 
     private int irakurriZenbakia(String mezua) {
         System.out.print(mezua);
