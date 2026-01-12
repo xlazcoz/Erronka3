@@ -35,7 +35,8 @@ class UI {
                 case 3 -> produktuaMugitu();
                 case 4 -> gelaxkaIkusi();
                 case 5 -> produktuaBilatu();
-                case 6 -> inbentarioZerbitzua.inbentarioOsoaInprimatu();
+                case 6 -> ProduktuAldaeraKontsultatu();
+                case 7 -> inbentarioZerbitzua.inbentarioOsoaInprimatu();
 
                 case 0 -> {
                     System.out.println("Agur! Programa ixten...");
@@ -46,7 +47,7 @@ class UI {
             }
         }
     }
-/*Menura imprimatzeko funtzioa */
+    /*Menura imprimatzeko funtzioa */
     private void menuaInprimatu() {
         System.out.println("\n=== BILTEGIAREN MENU NAGUSIA ===\n");
         System.out.println("1. Produktua gelaxka batean sartu");
@@ -54,7 +55,8 @@ class UI {
         System.out.println("3. Produktua gelaxken artean mugitu");
         System.out.println("4. Gelaxka baten edukia ikusi");
         System.out.println("5. Produktu baten kokapena bilatu");
-        System.out.println("6. Inbentario osoa ikusi\n");
+        System.out.println("6. Produktu aldaerak kontsultatu");
+        System.out.println("7. Inbentario osoa ikusi\n");
         System.out.println("0. Irten");
     }
 
@@ -139,6 +141,10 @@ class UI {
     private String irakurriTestua(String mezua) {
         System.out.print(mezua);
         return scanner.nextLine();
+    }
+    private void ProduktuAldaeraKontsultatu() {
+        String izena = irakurriTestua("Sartu produktuaren izena (edo zati bat): ");
+        inbentarioZerbitzua.ProduktuAldaeraKontsultatu(izena);
     }
 }
 
@@ -240,19 +246,29 @@ class Produktua {
         this.kategoriaNagusia = kategoriaNagusia;
         this.bigarrenMailakoKategoriak = bigarrenMailakoKategoriak;
     }
+   public String getIzena() {
+        return izena;
+    }
 
+    public Map<String, String> getAtributuak() {
+        return atributuak;
+    }
     public String getEan13() {
         return ean13;
     }
 
     @Override
     public boolean equals(Object o) {
-        return o instanceof Produktua p && p.ean13.equals(ean13);
+        if (this == o) return true;
+        if (!(o instanceof Produktua)) return false;
+        Produktua p = (Produktua) o;
+        return Objects.equals(ean13, p.ean13) && 
+               Objects.equals(atributuak, p.atributuak);
     }
 
     @Override
     public int hashCode() {
-        return ean13.hashCode();
+        return Objects.hash(ean13, atributuak);
     }
 
     @Override
@@ -299,7 +315,41 @@ class InbentarioZerbitzua {
         System.out.println("Gelaxka " + gelaxka.kokapena());
         gelaxka.getProduktuak().forEach((p, q) -> System.out.println("  " + p + " -> " + q));
     }
+    /* Izenaren bidez bilatzeko metodo flexiblea */
+    public void ProduktuAldaeraKontsultatu(String bilatzekoIzena) {
+        System.out.println("\n=== ALDAERAK KONTSULTATZEN: '" + bilatzekoIzena + "' ===");
+        
+        Set<Produktua> aldaerak = new HashSet<>();
+        
+        
+        String izenaMin = bilatzekoIzena.toLowerCase();
 
+        for (Apalategia a : biltegia.getApalategiak()) {
+            for (int r = 0; r < a.getErrenkadak(); r++) {
+                for (int c = 0; c < a.getZutabeak(); c++) {
+                    Gelaxka g = a.getGelaxka(r, c);
+                    
+                    g.getProduktuak().keySet().stream()
+                        /*Izenan bidez filtratzen dugu, ez EAN kodearen bidez */
+                        .filter(p -> p.getIzena().toLowerCase().contains(izenaMin))
+                        .forEach(p -> aldaerak.add(p));
+                }
+            }
+        }
+
+        if (aldaerak.isEmpty()) {
+            System.out.println("Ez da produkturik aurkitu izen horrekin.");
+        } else {
+            System.out.println("Aurkitutako aldaerak:");
+            for (Produktua p : aldaerak) {
+                String taila = p.getAtributuak().getOrDefault("taila", "N/A");
+                String kolorea = p.getAtributuak().getOrDefault("kolorea", "N/A");
+                
+               
+                System.out.println("-> " + p.getIzena() + " - " + taila + " - " + kolorea + " (EAN: " + p.getEan13() + ")");
+            }
+        }
+    }
     public void produktuarenKokapenaInprimatu(String ean) {
         for (Apalategia a : biltegia.getApalategiak()) {
             for (int r = 0; r < a.getErrenkadak(); r++) {
