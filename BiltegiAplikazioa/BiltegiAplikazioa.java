@@ -107,6 +107,7 @@ class UI {
         String ean = irakurriTestua("EAN-13 kodea: ");
         String izena = irakurriTestua("Produktuaren izena: ");
         String taila;
+        //taila ondo dagoela ziurtatu
     while (true) {
         taila = irakurriTestua("Taila: ");
         if (taila.matches("^(XS|xs|S|s|M|m|L|l|XL|xl)$")) {
