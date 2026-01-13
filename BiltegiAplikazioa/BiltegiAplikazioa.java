@@ -112,7 +112,7 @@ class UI {
         if (taila.matches("^(XS|S|M|L|XL)$")) {
             break;
         }
-        System.out.println("Talla no válida. Debe ser XS, S, M, L o XL. Inténtalo de nuevo.");
+        System.out.println(" XS, S, M, L o XL. Izan behar du taila");
     }
         String kolorea = irakurriTestua("Kolorea: ");
 
