@@ -8,6 +8,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #ffffff;
+    flex-direction: column;
     line-height: 1.6;
     color: #000000;
 }
@@ -135,12 +136,19 @@ img:hover {
     margin-left: 100px;
     font-size: 30px;
     margin-top: 25px;
+    display: none;
 }
 
 .saskia_izenburua p {
     margin-left: 100px;
     margin-bottom: 40px;
     font-size: 20px;
+    display: none;
+}
+.saskia_hutsa{
+    margin-left: 100px;
+    font-size: 23px;
+    margin-top: 2%;
 }
 .papelera img {
     width: 30px;
@@ -151,9 +159,7 @@ img:hover {
     border: none;
 }
 
-.saskia_hutsa {
-    display: none;
-}
+
 
 .saskia_produktuak {
     margin-top: 10px;
@@ -172,6 +178,7 @@ img:hover {
     background-color: #e9e8e7;
     border-radius: 16px;
     font-size: 20px;
+    display: none;
 }
 
 .produktu img:not(.papelera) {
@@ -211,7 +218,8 @@ img:hover {
     justify-content: space-between;
     margin-right: 100px;
     margin-left: 100px;
-    margin-top: 30px;
+    margin-top: 25%;
+
 }
 
 .ezker_ekintzak button {
@@ -287,8 +295,7 @@ img:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
-   
+    margin-top: 4%;
 }
 
 
