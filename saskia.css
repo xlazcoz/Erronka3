@@ -170,21 +170,19 @@ img:hover {
 
 .produktu {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-right: 100px;
     margin-left: 100px;
     background-color: #e9e8e7;
     border-radius: 16px;
     font-size: 20px;
-    display: none;
 }
 
 .produktu img:not(.papelera) {
     width: 150px;
     border-radius: 16px;
-    height: 300;
 }
 
 .izena h4 {
@@ -218,7 +216,7 @@ img:hover {
     justify-content: space-between;
     margin-right: 100px;
     margin-left: 100px;
-    margin-top: 25%;
+    margin-top: 30px;
 
 }
 
@@ -248,11 +246,33 @@ img:hover {
     display: flex;
     justify-content: center;
 }
-
-.kantitatea b {
+.kantitatea-edukia {
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 5px;               
 }
+
+.kantitatea {
+    display: flex;          
+    align-items: center;
+    gap: 10px;
+}
+
+.kantitatea span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.kantitatea button {
+    border: none;
+    background-color: #e9e8e7;
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
 
 .guztira b {
     display: flex;
@@ -271,19 +291,51 @@ img:hover {
 .saskiko_prezio_totala p {
    font-size: 23px;
    margin-right: 30px;
-   margin-left: 25px;
-  
+   margin-left: 25px;  
 }
 .saskiko_prezio_totala{
-   align-items: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;  
     background-color: #e9e8e7;
     border-radius: 16px 0px 0px 16px ;
     height: 73px;
-    width: 150px;
+    width: 200px;
     margin-top: 20px;
+}
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #464e7c;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 400px;
+    height: 200px;
+}
+#popup p{
+    font-size: 20px;
+}
+#popup button {
+    display: flex;
+    justify-content: center;
+    transform: translate(290%, 50%);
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    border: none;
+    font-size: 50px;
+    border-radius: 16%;
+    background-color: #464e7c;
+}
+#popup button:hover {
+    transform: scale(1.2);
+    background-color: #475e7c;
+    transform: translate(295%, 35%);
 }
 
 
@@ -330,7 +382,8 @@ img:hover {
     border-radius: 10px;
 }
 
-.logos img:hover {
+.logos img:hover,
+.kantitatea button:hover {
     transform: scale(1.5);
     transition: transform 0.3s ease;
 }

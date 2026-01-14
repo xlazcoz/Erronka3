@@ -8,7 +8,6 @@
     <meta name="description" content="Hemen Indiusurbil-eko web orria egingo dugu">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="saskia.css">
-    <script src="produktuak.js" defer></script>
     <script src="saskia.js" defer></script>
     <title>Indiusurbil</title>
 </head>
@@ -33,7 +32,7 @@
             </details>
             <div class="carrito">
                 <a href="saskia.html"><img src="img/cesta.png" alt="cesta"></a>
-                <span>[0]</span>
+                <span>[3]</span>
             </div>
         </nav>
     </header>
@@ -43,22 +42,140 @@
             <p><b>Hona hemen zure produktu guztiak</b></p>
         </div>
         <div class="saskia_edukia">
-            <h1>Produktuen zerrenda</h1>
             <div id="saskia-produktuak"></div>
+            <div class="produktu">
+                <img src="img/camiseta blanca.png" alt="Kamiseta Txuria">
+                <div class="izena">
+                    <h4>Produktua</h4>
+                    <p><b>Kamiseta Txuria</b></p>
+                </div>
+                <div class="taila">
+                    <label for="taila">
+                        <h4>Aukeratu zure taila:</h4>
+                    </label>
+                    <select name="tailak" id="taila">
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                    </select>
+                </div>
+                <div class="prezioa">
+                    <h4>Prezioa</h4>
+                    <p><b>15 €</b>
+                    <p>
+                </div>
+                <div class="kantitatea-edukia">
+                    <span><b>Kantitatea:</b></span>
+                    <div class="kantitatea">
+                        <button class="kendu">-</button>
+                        <span class="kantitatea">1</span>
+                        <button class="gehitu">+</button>
+                    </div>
+                </div>
+                <div class="guztira">
+                    <h4>Guztira</h4>
+                    <p><b>15 €</b></p>
+                </div>
+            </div>
+            <div class="produktu">
+                <img src="img/camiseta de rayas granate.png" alt="Marradun Kamiseta granatea">
+                <div class="izena">
+                    <h4>Produktua</h4>
+                    <p><b>Marradun Kamiseta </b></p>
+                    <p class="behekoa"><b>granatea</b></p>
+                </div>
+                <div class="taila">
+                    <label for="taila">
+                        <h4>Aukeratu zure taila:</h4>
+                    </label>
+                    <select name="tailak" id="taila">
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                    </select>
+                </div>
+                <div class="prezioa">
+                    <h4>Prezioa</h4>
+                    <p><b>20 €</b>
+                    <p>
+                </div>
+                <div class="kantitatea-edukia">
+                    <span><b>Kantitatea:</b></span>
+                    <div class="kantitatea">
+                        <button class="kendu">-</button>
+                        <span class="kantitatea2">1</span>
+                        <button class="gehitu">+</button>
+                    </div>
+                </div>
+                <div class="guztira">
+                    <h4>Guztira</h4>
+                    <p><b>20 €</b></p>
+                </div>
+            </div>
+            <div class="produktu">
+                <img src="img/chaqueta vaquera.png" alt="Txaketa Bakera">
+                <div class="izena">
+                    <h4>Produktua</h4>
+                    <p><b>Txaketa Bakera</b></p>
+                </div>
+                <div class="taila">
+                    <label for="taila">
+                        <h4>Aukeratu zure taila:</h4>
+                    </label>
+                    <select name="tailak" id="taila">
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                    </select>
+                </div>
+                <div class="prezioa">
+                    <h4>Prezioa</h4>
+                    <p><b>60 €</b>
+                    <p>
+                </div>
+                <div class="kantitatea-edukia">
+                    <span><b>Kantitatea:</b></span>
+                    <div class="kantitatea">
+                        <button class="kendu">-</button>
+                        <span class="kantitatea2">0</span>
+                        <button class="gehitu">+</button>
+                    </div>
+                </div>
+                <div class="guztira">
+                    <h4>Guztira</h4>
+                    <p><b>60 €</b></p>
+                </div>
+                <div class="ezabatu">
+                </div>
+
+            </div>
             <div class="saskia_ekintzak">
                 <div class="ezker_ekintzak">
-                    <button class="hustu"> SASKIA HUSTU </button>
+                    <button id="hustu" class="hustu"> SASKIA HUSTU </button>
                 </div>
                 <div class="eskubi_ekintzak">
                     <div class="saskiko_prezio_totala">
                         <h2>Guztira:</h2>
-                        <p>x</p>
+                        <p><b>95 €</b></p>
                     </div>
                     <div class="erosketa_ordaindu">
-                        <button class="ordaindu"> ORDAINDU </button>
+                        <button type="button" onclick="irekiDialogoa()" class="ordaindu">
+                            ORDAINDU
+                        </button>
+                    </div>
+
+                    <div id="popup" >
+                        <p>Erosketa eginda</p>
+                        <button onclick="itxiDialogoa()">❌</button>
                     </div>
                 </div>
-            </div>
+
     </main>
     <footer class="footer2">
         <div class="logo">
