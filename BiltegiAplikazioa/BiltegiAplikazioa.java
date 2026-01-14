@@ -113,7 +113,7 @@ class UI {
         if (taila.matches("^(XS|xs|S|s|M|m|L|l|XL|xl)$")) {
             break;
         }
-        System.out.println(" XS, S, M, L o XL. Izan behar du taila");
+        System.out.println(" XS, S, M, L edo XL. Izan behar du taila");
     }
         String kolorea = irakurriTestua("Kolorea: ");
 
