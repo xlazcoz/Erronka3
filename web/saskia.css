@@ -170,7 +170,7 @@ img:hover {
 
 .produktu {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin-top: 30px;
     margin-right: 100px;
