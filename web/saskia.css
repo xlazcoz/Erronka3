@@ -117,7 +117,7 @@ summary:hover {
     background-color: #e0e0e0;
 }
 
-img:hover {
+img:hover :not.saskia_edukia{
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
