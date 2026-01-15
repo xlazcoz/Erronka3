@@ -121,9 +121,9 @@ class UI {
         atributuak.put("taila", taila);
         atributuak.put("kolorea", kolorea);
 
-        Kategoria kategoria = new Kategoria("Orokorra", null);
+        
 
-        return new Produktua(ean, izena, atributuak, kategoria, List.of());
+        return new Produktua(ean, izena, atributuak );
     }
 
 
@@ -249,21 +249,17 @@ class Produktua {
     private final String ean13;
     private final String izena;
     private final Map<String, String> atributuak;
-    private final Kategoria kategoriaNagusia;
-    private final List<Kategoria> bigarrenMailakoKategoriak;
+   
 
     public Produktua(
         String ean13,
         String izena,
-        Map<String, String> atributuak,
-        Kategoria kategoriaNagusia,
-        List<Kategoria> bigarrenMailakoKategoriak
+        Map<String, String> atributuak
+    
     ) {
         this.ean13 = ean13;
         this.izena = izena;
         this.atributuak = atributuak;
-        this.kategoriaNagusia = kategoriaNagusia;
-        this.bigarrenMailakoKategoriak = bigarrenMailakoKategoriak;
     }
    public String getIzena() {
         return izena;
@@ -296,15 +292,8 @@ class Produktua {
     }
 }
 
-class Kategoria {
-    private final String izena;
-    private final Kategoria gurasoa;
 
-    public Kategoria(String izena, Kategoria gurasoa) {
-        this.izena = izena;
-        this.gurasoa = gurasoa;
-    }
-}
+
 
 class InbentarioZerbitzua {
     private final Biltegia biltegia;

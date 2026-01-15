@@ -13,7 +13,7 @@ public class BiltegiAplikazioaTest {
         // Produktua sortu
         Map<String, String> atributuak = new HashMap<>();
         atributuak.put("taila", "M");
-        Produktua p = new Produktua("111", "Kamiseta", atributuak, null, new ArrayList<>());
+        Produktua p = new Produktua("111", "Kamiseta", atributuak);
 
         Gelaxka gelaxka = apalategia.getGelaxka(3, 3);
         gelaxka.produktuaGehitu(p, 10);
