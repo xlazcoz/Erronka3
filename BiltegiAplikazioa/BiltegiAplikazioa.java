@@ -1,12 +1,15 @@
 import java.util.*;
 
+/* Aplikazioaren klase nagusia. Hemen hasten da exekuzioa. */
 public class BiltegiAplikazioa {
     public static void main(String[] args) {
+        /* Biltegia eta lehenengo apalategia sortzen ditugu */
         Biltegia biltegia = new Biltegia("IndiUsurbil Biltegia");
         Apalategia apalategiaA = new Apalategia("A", 5, 5);
 
         biltegia.gehituApalategia(apalategiaA);
 
+        /* Zerbitzua eta erabiltzaile-interfazea (UI) hasieratu */
         InbentarioZerbitzua inbentarioZerbitzua = new InbentarioZerbitzua(biltegia);
         UI ui = new UI(inbentarioZerbitzua, apalategiaA);
 
@@ -25,6 +28,7 @@ class UI {
     }
 
     public void hasi() {
+        /* Begizta infinitua programa irekita mantentzeko erabiltzaileak '0' sakatu arte */
         while (true) {
             menuaInprimatu();
             int aukera = irakurriZenbakia("Aukeratu aukera bat: ");
@@ -47,7 +51,8 @@ class UI {
             }
         }
     }
-    /*Menura imprimatzeko funtzioa */
+    
+    /* Menua kontsolan inprimatzeko funtzioa */
     private void menuaInprimatu() {
         System.out.println("\n=== BILTEGIAREN MENU NAGUSIA ===\n");
         System.out.println("1. Produktua gelaxka batean sartu");
@@ -88,6 +93,7 @@ class UI {
         Gelaxka helmuga = gelaxkaIrakurri();
 
         int kantitatea = irakurriZenbakia("Kantitatea: ");
+        /* Produktua jatorritik kendu eta helmugan gehitzen du pauso bakarrean */
         inbentarioZerbitzua.produktuaMugituEANarekin(jatorria, helmuga, ean, kantitatea);
 
         System.out.println("Produktua mugitu da.");
@@ -107,50 +113,50 @@ class UI {
         String ean = irakurriTestua("EAN-13 kodea: ");
         String izena = irakurriTestua("Produktuaren izena: ");
         String taila;
-        //taila ondo dagoela ziurtatu
-    while (true) {
-        taila = irakurriTestua("Taila: ");
-        if (taila.matches("^(XS|xs|S|s|M|m|L|l|XL|xl)$")) {
-            break;
+        
+        /* Taila formatu egokian dagoela ziurtatzeko balidazioa (Regex erabiliz) */
+        while (true) {
+            taila = irakurriTestua("Taila: ");
+            if (taila.matches("^(XS|xs|S|s|M|m|L|l|XL|xl)$")) {
+                break;
+            }
+            System.out.println(" XS, S, M, L o XL. Izan behar du taila");
         }
-        System.out.println(" XS, S, M, L o XL. Izan behar du taila");
-    }
         String kolorea = irakurriTestua("Kolorea: ");
 
+        /* Atributu gehigarriak mapa batean gordetzen ditugu malgutasuna izateko */
         Map<String, String> atributuak = new HashMap<>();
         atributuak.put("taila", taila);
         atributuak.put("kolorea", kolorea);
-
-        
 
         return new Produktua(ean, izena, atributuak );
     }
 
 
     private Gelaxka gelaxkaIrakurri() {
-    int errenkada;
-    int zutabea;
-    
-    // Errenkada Ondo dagoela ziurtatu
-    while(true){
-        errenkada = irakurriZenbakia("Errenkada: ");
-        if(errenkada >= 0 && errenkada < 6){
-            break;
+        int errenkada;
+        int zutabea;
+        
+        /* Errenkada baliozkoa dela egiaztatu (Apalategiaren mugen barruan) */
+        while(true){
+            errenkada = irakurriZenbakia("Errenkada: ");
+            if(errenkada >= 0 && errenkada < 6){
+                break;
+            }
+            System.out.println("Errenkada ez da baliozkoa. 0 eta 5 artean egon behar da.");
         }
-        System.out.println("Errenkada ez da baliozkoa. 0 eta 5 artean egon behar da.");
-    }
-    
-    // Zutabea Ondo dagoela ziurtatu
-    while(true){
-        zutabea = irakurriZenbakia("Zutabea: ");
-        if(zutabea >= 0 && zutabea < 6){
-            break;
+        
+        /* Zutabea baliozkoa dela egiaztatu */
+        while(true){
+            zutabea = irakurriZenbakia("Zutabea: ");
+            if(zutabea >= 0 && zutabea < 6){
+                break;
+            }
+            System.out.println("Zutabea ez da baliozkoa. 0 eta 5 artean egon behar da.");
         }
-        System.out.println("Zutabea ez da baliozkoa. 0 eta 5 artean egon behar da.");
-    }
 
-    return apalategia.getGelaxka(errenkada, zutabea);
-}
+        return apalategia.getGelaxka(errenkada, zutabea);
+    }
 
     private int irakurriZenbakia(String mezua) {
         System.out.print(mezua);
@@ -161,6 +167,7 @@ class UI {
         System.out.print(mezua);
         return scanner.nextLine();
     }
+    
     private void ProduktuAldaeraKontsultatu() {
         String izena = irakurriTestua("Sartu produktuaren izena (edo zati bat): ");
         inbentarioZerbitzua.ProduktuAldaeraKontsultatu(izena);
@@ -169,6 +176,7 @@ class UI {
 
 class Biltegia {
     private final String izena;
+    /* Apalategi anitz gorde ditzakeen lista */
     private final List<Apalategia> apalategiak = new ArrayList<>();
 
     public Biltegia(String izena) {
@@ -186,12 +194,14 @@ class Biltegia {
 
 class Apalategia {
     private final String id;
+    /* Dimentsio biko arraya (matrizea) gelaxkak kudeatzeko */
     private final Gelaxka[][] gelaxkak;
 
     public Apalategia(String id, int errenkadak, int zutabeak) {
         this.id = id;
         this.gelaxkak = new Gelaxka[errenkadak][zutabeak];
 
+        /* Matrizea hasieratu eta gelaxka bakoitza sortu koordenatu propioekin */
         for (int r = 0; r < errenkadak; r++) {
             for (int c = 0; c < zutabeak; c++) {
                 gelaxkak[r][c] = new Gelaxka(this, r, c);
@@ -220,6 +230,7 @@ class Gelaxka {
     private final Apalategia apalategia;
     private final int row;
     private final int col;
+    /* Mapa: Gakoa produktua da, balioa kantitatea (Integer) */
     private final Map<Produktua, Integer> produktuak = new HashMap<>();
 
     public Gelaxka(Apalategia apalategia, int row, int col) {
@@ -228,10 +239,12 @@ class Gelaxka {
         this.col = col;
     }
 
+    /* Produktua existitzen bada, kantitatea batu; bestela, berria sortu */
     public void produktuaGehitu(Produktua p, int k) {
         produktuak.merge(p, k, Integer::sum);
     }
 
+    /* Kantitatea eguneratu. Emaitza 0 edo txikiagoa bada, produktua mapatik ezabatu */
     public void produktuaKendu(Produktua p, int k) {
         produktuak.computeIfPresent(p, (prod, q) -> q - k <= 0 ? null : q - k);
     }
@@ -255,13 +268,12 @@ class Produktua {
         String ean13,
         String izena,
         Map<String, String> atributuak
-    
     ) {
         this.ean13 = ean13;
         this.izena = izena;
         this.atributuak = atributuak;
     }
-   public String getIzena() {
+    public String getIzena() {
         return izena;
     }
 
@@ -272,6 +284,7 @@ class Produktua {
         return ean13;
     }
 
+    /* equals eta hashCode beharrezkoak dira produktua Map bateko gako (Key) gisa erabiltzeko */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -307,6 +320,7 @@ class InbentarioZerbitzua {
     }
 
     public void produktuaKenduEANarekin(Gelaxka gelaxka, String ean, int kantitatea) {
+        /* Produktua bilatu lehenik, eta aurkitzen bada bakarrik kendu */
         bilatuProduktua(gelaxka, ean).ifPresent(p -> {
             gelaxka.produktuaKendu(p, kantitatea);
         });
@@ -323,22 +337,23 @@ class InbentarioZerbitzua {
         System.out.println("Gelaxka " + gelaxka.kokapena());
         gelaxka.getProduktuak().forEach((p, q) -> System.out.println("  " + p + " -> " + q));
     }
-    /* Izenaren bidez bilatzeko metodo flexiblea */
+    
+    /* Izenaren bidez (edo zati baten bidez) bilatzeko metodoa */
     public void ProduktuAldaeraKontsultatu(String bilatzekoIzena) {
         System.out.println("\n=== ALDAERAK KONTSULTATZEN: '" + bilatzekoIzena + "' ===");
         
         Set<Produktua> aldaerak = new HashSet<>();
         
-        
         String izenaMin = bilatzekoIzena.toLowerCase();
 
+        /* Biltegi osoa zeharkatu (Apalategiak -> Gelaxkak -> Produktuak) */
         for (Apalategia a : biltegia.getApalategiak()) {
             for (int r = 0; r < a.getErrenkadak(); r++) {
                 for (int c = 0; c < a.getZutabeak(); c++) {
                     Gelaxka g = a.getGelaxka(r, c);
                     
                     g.getProduktuak().keySet().stream()
-                        /*Izenan bidez filtratzen dugu, ez EAN kodearen bidez */
+                        /* Izenan bidez filtratzen dugu, ez EAN kodearen bidez */
                         .filter(p -> p.getIzena().toLowerCase().contains(izenaMin))
                         .forEach(p -> aldaerak.add(p));
                 }
@@ -353,16 +368,17 @@ class InbentarioZerbitzua {
                 String taila = p.getAtributuak().getOrDefault("taila", "N/A");
                 String kolorea = p.getAtributuak().getOrDefault("kolorea", "N/A");
                 
-            
                 System.out.println("-> " + p.getIzena() + " - " + taila + " - " + kolorea + " (EAN: " + p.getEan13() + ")");
             }
         }
     }
+    
     public void produktuarenKokapenaInprimatu(String ean) {
         for (Apalategia a : biltegia.getApalategiak()) {
             for (int r = 0; r < a.getErrenkadak(); r++) {
                 for (int c = 0; c < a.getZutabeak(); c++) {
                     Gelaxka g = a.getGelaxka(r, c);
+                    /* Java Stream API erabiltzen dugu bilaketa egiteko */
                     bilatuProduktua(g, ean).ifPresent(p -> {
                         System.out.println(g.kokapena() + " -> " + g.getProduktuak().get(p));
                     });
@@ -385,6 +401,7 @@ class InbentarioZerbitzua {
         }
     }
 
+    /* Laguntza-metodo pribatua, gelaxka baten barruan EAN bidez bilatzeko */
     private Optional<Produktua> bilatuProduktua(Gelaxka gelaxka, String ean) {
         return gelaxka.getProduktuak()
             .keySet()
