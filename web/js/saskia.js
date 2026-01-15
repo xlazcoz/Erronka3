@@ -12,4 +12,8 @@ function hustuSaskia() {
     p.style.display = "none";
   });
 }
+function guztiraAldatu() {
+  document.getElementById("guztira").style.display = "none";
+}
+
 
