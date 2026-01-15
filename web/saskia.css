@@ -333,11 +333,6 @@ footer{
     border-radius: 16%;
     background-color: #464e7c;
 }
-#popup button:hover {
-    transform: scale(1.2);
-    background-color: #475e7c;
-    transform: translate(295%, 35%);
-}
 
 
 .footer2 {
