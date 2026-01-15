@@ -8,5 +8,8 @@ function itxiDialogoa() {
 }
 
 function hustuSaskia() {
-  document.getElementById("produktu").style.display = "none";
+  document.querySelectorAll("#produktu").forEach(p => {
+    p.style.display = "none";
+  });
 }
+

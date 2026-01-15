@@ -112,6 +112,9 @@ details[open] summary:hover, summary:hover {
     width: 40px;
     color: #000000; 
 }
+.carrito span {
+    font-size: 20px;
+}
 
 .portada {
     padding: 50px;

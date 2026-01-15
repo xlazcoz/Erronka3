@@ -158,9 +158,10 @@ img:hover {
 .saskia_produktuak button {
     border: none;
 }
-
-
-
+footer{
+   
+   grid-template-columns: auto 1fr auto;
+}
 .saskia_produktuak {
     margin-top: 10px;
     display: flex;
@@ -347,7 +348,6 @@ img:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 4%;
 }
 
 

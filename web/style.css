@@ -122,9 +122,9 @@ summary:hover {
     width: 40px;
     color: #000000; 
 }
-
-
-
+.carrito span {
+    font-size: 20px;
+}
 
 .seccion-carrusel {
     position: relative;
